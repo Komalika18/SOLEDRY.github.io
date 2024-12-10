@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!-- <!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -35,3 +35,112 @@
     <script src="script.js"></script> <!-- Link to a JS file -->
 </body>
 </html>s
+ -->
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Soledry's Website</title>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Soledry's Website!</h1>
+        <p>This is my personal site hosted on GitHub Pages.</p>
+    </header>
+    <main>
+        <p>Here you'll find information about my projects, blog posts, and more!</p>
+    </main>
+    <footer>
+        <p>&copy; 2024 Soledry</p>
+    </footer>
+</body>
+</html>
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOLEDRY Project</title>
+</head>
+<body>
+    <h1>SOLEDRY</h1>
+    <a href="https://classroom.github.com/a/4PO5M1Wx">
+        <img src="https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg" alt="Review Assignment Due Date">
+    </a>
+
+    <h2>Final Project Skeleton</h2>
+    <ul>
+        <li><strong>Team Name:</strong> ohm-sweet-ohm</li>
+        <li><strong>Team Members:</strong> Venkatesh Komalika & Jyotiraditya</li>
+        <li><strong>Github Repository URL:</strong> <a href="https://github.com/upenn-embedded/final-project-ohm-sweet-ohm">https://github.com/upenn-embedded/final-project-ohm-sweet-ohm</a></li>
+        <li><strong>Github Pages Website URL:</strong> [for final submission]</li>
+        <li><strong>Description of hardware:</strong> Embedded hardware, laptop, etc.</li>
+    </ul>
+
+    <h2>Final Project Proposal</h2>
+    <h3>1. Abstract</h3>
+    <p>
+        <strong>SoleDry</strong> is a sustainable solution designed to dry wet shoes, prevent bad odors, and extend shoe lifespan, especially during the monsoon season. The system uses humidity and temperature control to efficiently dry shoes overnight without causing damage. A display provides real-time updates on weight, temperature, and humidity, allowing users to monitor the drying process effectively. This prototype demonstrates the feasibility of maintaining shoe freshness and durability through automated environmental control.
+    </p>
+
+    <h3>2. Motivation</h3>
+    <p><strong>Problem:</strong> Wet shoes, especially in countries with long rainy seasons, lead to bad odors, bacterial growth, and a shorter shoe lifespan. Traditional drying methods are often inefficient and can damage shoes due to improper temperature control or excessive moisture retention, making it difficult to maintain shoe quality and hygiene.</p>
+    <p><strong>Interesting Because:</strong> SoleDry provides an innovative, automated solution to a common problem by using real-time humidity and temperature control to efficiently dry shoes without compromising their quality. It's particularly useful in humid climates, offering a sustainable way to extend shoe lifespan and improve hygiene.</p>
+    <p><strong>Intended Purpose:</strong> The goal is to create an efficient, user-friendly system that dries shoes overnight, prevents odor, and maintains the structural integrity of shoes. It ensures shoes remain fresh and usable, making it a convenient and sustainable tool for everyday life, especially during wet seasons.</p>
+
+    <h3>3. Goals</h3>
+    <ol>
+        <li>Maintaining Air Flow: Ensure proper air circulation through vents, exhausts, and fans to promote efficient and uniform drying of shoes.</li>
+        <li>Humidity Control: Use sensors and controlled air flow to regulate and maintain optimal humidity levels, preventing excess moisture or drying too fast.</li>
+        <li>Temperature Control: Incorporate a reliable heating system to control the temperature inside the box, ensuring shoes dry efficiently without overheating.</li>
+        <li>Weight Monitoring: Utilize a weight sensor to track the reduction in shoe weight, enabling precise monitoring of moisture loss during drying.</li>
+        <li>LED Display: Show real-time values for humidity, temperature, and weight, along with a calculated percentage indicating how much the shoes have dried based on initial and dry weights.</li>
+        <li>Buzzer Notification: Include an alert system (buzzer) to notify the user when the desired dry weight is achieved, signaling that the shoes are fully dry.</li>
+    </ol>
+
+    <h3>4. System Block Diagram</h3>
+    <img src="image.png" alt="Block Diagram">
+
+    <h3>5. Design Sketches</h3>
+    <img src="image-1.png" alt="Design Sketches">
+
+    <h3>6. Software Requirements Specification (SRS)</h3>
+    <h4>6.1 Overview</h4>
+    <p>SoleDry is a system designed to automate the process of drying wet shoes. The software controls various input devices such as humidity, temperature, and weight sensors, as well as output devices like relays, fans, and heaters. The system processes sensor data, makes decisions based on pre-set thresholds, and displays real-time data to the user on an integrated display and through IoT (Blynk) connectivity for remote monitoring and control.</p>
+
+    <h4>6.2 Users</h4>
+    <ul>
+        <li><strong>Primary Users:</strong> Individuals looking to dry their shoes in a controlled environment, especially in regions with long rainy seasons or humid climates.</li>
+        <li><strong>System Administrators:</strong> Users responsible for setting up and maintaining the hardware and software, adjusting thresholds and monitoring performance.</li>
+        <li><strong>Remote Users:</strong> Individuals who want to monitor and control the drying process through the Blynk IoT platform via their mobile devices.</li>
+    </ul>
+
+    <h4>6.3 Definitions, Abbreviations</h4>
+    <ul>
+        <li><strong>ATmega328pb:</strong> The microcontroller used to control output devices and read sensor data.</li>
+        <li><strong>ESP32:</strong> A microcontroller with built-in Wi-Fi for IoT capabilities, used for remote monitoring and control.</li>
+        <li><strong>Blynk IoT:</strong> A platform for remote device monitoring and control through mobile applications.</li>
+        <li><strong>SRS:</strong> Software Requirements Specification.</li>
+        <li><strong>PWM:</strong> Pulse Width Modulation used to control fan speed.</li>
+    </ul>
+
+    <h4>6.4 Functionality</h4>
+    <p>The software functionality involves:</p>
+    <ul>
+        <li>SRS 01 – Humidity and temperature sensors continuously monitor the environment, sending data to the ATmega328pb every second.</li>
+        <li>SRS 02 – The weight sensor measures and updates the shoe weight with a precision of 20 grams, logging values every 30 seconds.</li>
+        <li>SRS 03 – Relay switches control the heater and fans based on pre-set temperature thresholds at 30°C, observed every 30 seconds.</li>
+        <li>SRS 04 – The display updates every second to show the current temperature, humidity, and weight, as well as the percentage of drying progress.</li>
+        <li>SRS 05 – The user can adjust the mode (Automatic, Manual, and Profile mode) via buttons, with input processing every 30 seconds.</li>
+    </ul>
+
+    <h3>7. Hardware Requirements Specification (HRS)</h3>
+    <!-- Add more sections in the same pattern -->
+</body>
+</html>
+
