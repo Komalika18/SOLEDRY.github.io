@@ -1,325 +1,4 @@
-# SOLEDRY
 
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/4PO5M1Wx)
-# final-project-skeleton
-    
-    * Team Name: ohm-sweet-ohm
-    * Team Members: Venkatesh Komalika & Jyotiraditya 
-    * Github Repository URL: https://github.com/upenn-embedded/final-project-ohm-sweet-ohm
-    * Github Pages Website URL: [for final submission]
-    * Description of hardware: (embedded hardware, laptop, etc)
-
-## Final Project Report
-
-Don't forget to make the GitHub pages public website!
-If you’ve never made a Github pages website before, you can follow this webpage (though, substitute your final project repository for the Github username one in the quickstart guide):  <https://docs.github.com/en/pages/quickstart>
-
-### 1. Video
-
-Link to the video - <https://drive.google.com/file/d/1IilFWwbBmbQqKNDm-Jm01vqyb_RhfAGt/view?usp=sharing>
-
-### 2. Images
-
-![Final image](image-5.png)
-
-### 3. Results
-
-#### 3.1 Software Requirements Specification (SRS) Results
-
-* SRS 01 – Humidity and temperature sensors will continuously monitor the environment, sending data to the ATmega328pb every second and sending heater temperature every second as well and it's getting compared every 30 seconds.
-* SRS 02 – The weight sensor will measure and update the shoe weight with a precision of 20 grams, and values will be logged every 30 seconds.
-* SRS 03 – Relay switches will control the heater and fans based on pre-set temperature thresholds at 30°C , observed every 30 seconds.
-* SRS 04 – The display will update every second to show the current temperature, humidity, and weight, as well as the percentage of drying progress.
-* SRS 05 – The user can adjust the mode (Automatic, Manual, and Profile mode) via the buttons, with input processing every 30 seconds. (However for the scope for the final demonstration we are focussing on the automatic mode only.)
-**Did you achieve your requirements?**
-Yes. The modes can be selected and the readings for both the sensors are accurate. 
-**How did you test? Show proof of work (videos, images, collected data, etc.)**
-
-(posted with the hardware)
-
-#### 3.2 Hardware Requirements Specification (HRS) Results
-* HRS 01 – The project shall be based on the ATmega328pb microcontroller to control relays, heating coil, fans, and process sensor data.
-* HRS 02 – A sensor shall be used to detect the weight of the wet shoe placed in the box. The sensor shall measure weight with an accuracy of 20 grams and send data to the microcontroller.
-* HRS 03 – A heater shall be used as the drying element. The coil’s temperature shall be continuously monitored by a temperature sensor to avoid overheating. The system shall shut down the coil if the temperature exceeds a preset limit that 30°C. 
-* HRS 04 – Two 5V fans shall be used to ensure the circulation of hot air inside the box. The fans shall operate in conjunction with the heating coil to provide an even airflow.
-* HRS 05 – An LCD display shall be used to show the real-time weight of the shoe and the estimated drying time. The drying time will be calculated based on the weight and environmental conditions (temperature and humidity).
-* HRS 06 – A temperature and humidity sensor shall be used to monitor the humidity and temperature inside the box, ensuring optimal drying conditions are maintained.
-* HRS 07 – Relays shall control the power supply to the heating coil and fans, turning them on or off based on the shoe weight, temperature, and humidity readings.
-* HRS 08 – A 5V power supply block shall power the microcontrollers and input devices, while a 12V power supply shall be used for the relays and output devices (fans), AC supply for the Heater. 
-**Did you achieve your requirements?**
-Yes. 
-How did you test? Show proof of work (videos, images, collected data, etc.)
-We directly started to work with the components. For the relay we tested with the LEDs to see if the switches would get turned on or not.
-
-We measure the readings every 30 secs but we compare them every 15 mins. After the two/ three consecutive readings are the same, the shoe gets dried and we turn off the heater and the fans. 
-
-**Proof**
-[To be noted that that the box wasnt covered so the readings for the temperature and humidity are not that different. Also to be noted that the upper limit for the temp sensor was set to be 40 degrees C]
-
-* Readings before the drying of the shoe:
-![wet shoe](image-3.png)
-
-
-* Readings after the drying process is complete :
-![dried shoe](image-4.png)
-
-  **Three topics**
-1. I2C with weight sensor 
-2. I2C with Humidity and temperature sensor
-3. Power management
-4. Interrupts
-5. Timers
-  
-  **Input devices**
-  1. humidity and temperature sebnsor
-  2. weight sensor
-  
-   
-   **Output devices**
-1. LCD
-2. Heated chamber
-3. fans
-4. mobaexterm
-  
-
-### 4. Conclusion
-
-Reflect on your project. Some questions to consider: What did you learn from it? What went well? What accomplishments are you proud of? What did you learn/gain from this experience? Did you have to change your approach? What could have been done differently? Did you encounter obstacles that you didn’t anticipate? What could be a next step for this project?
-
-* This project has been filled with it's ups and downs. All in all it was fun, we all learnt a lot of new things while applying the concepts that were taught in class. The teaching team has been a massive help, Not just 5190 TAs but even Miles who is a TA for 5180, has to be thanked for all the times he has helped us. 
-
-* Lesson learnt - 
-
-1. Before finalising the components, read the datasheet, maybe check if its actually clear and helpful.
-2. The Logic analyzer is your friend.
-3. How to reverse engineer the code based on the Logic analyzer readings if the datasheet is not helpful. 
-4. How to write I2C drivers, although it took a lot of time. 
-5. We learnt about Finite State Machines for assembling the code together. 
-6. Some new skills that were explored and learnt - Lazer cutting, 3-D printing. 
-7. We used two different sensors on the same atmega board.
-8. We learnt how to wrok as a team 
-9. How to divide tasks amongst the team 
-10. How to study concepts together. 
-11. How to remain calm and positive when everything else suggests that we shouldn't. 
-12. How to frame your code in a proper way.  
-
-* Approach change
-  - none
-* design change
-  - as suggested by the professor, the location of the fans has been changed to optimize the airflow within the box.
-
-* what could have been diffrently?
-  - We should have been more through while selecting the components and we should have checked the datasheets to see how detailed and easy to read they were. 
-  - We would have chosen a different thing for weight sensing, the load sensor, even though it has a 0.1 grams effor factor, we could have used something else as the datasheet for NAU7802 was not readable for us, and hence we used up a lot of our time to write code using the datasheet.
-*  Did you encounter obstacles that you didn’t anticipate?
-  - yes. some datasheets aren't helpful for begginers
-  - combining the codes together isn't as easy as it seems. 
-* What could be a next step for this project?
-  -  Building up the manual mode and the profile mode.
-
-
-## MVP Demo
-
-What do you plan to accomplish by the MVP Demo?
-- get both the code sensors working with atmega. 
-
-
-## Sprint review #2
-
-
-### Current state of project
-
-* Hardware of the project is done and ready to be used.  
-* TWI codes have been understood and written. 
-  
-
-
-### Last week's progress 
-
-* STATUS OF THE SHOE HEATER BOX
- ![Open view of the BOX img1](<WhatsApp Image 2024-11-22 at 15.56.40_948d960a.jpg>)
- ![BOX img2](<WhatsApp Image 2024-11-22 at 16.00.33_61e609e3.jpg>)
-* TWI / I2c code [[codes\i2c.c](codes/i2c.c)]
-* Temperature and Humidity sensor library code. 
-
-
-### Next week's plan
-
-* to have a working temperature and humidity code 
-* as well as a working Weight sensor code 
-* All these codes atleast display the outputs on the MOBAEXTERM
-* To start with The codes for relay switches, for when the heater will be turned off. 
-  
-###### Estimated time team efforts
-
-* Unfortunately it turns out that one person per sensor was not a proper way to allocate the work distribution, venky and komalika both have been working to understand the twi codes together. 
-
-* we plan to work on the weight sensor together as well, as soon as we are done with the working of the H&T sensor code. 
-
-
-  
-
-
-
-## Sprint review #1
-
-<!-- Hardware and software requirements
-System architecture block diagram
-Understanding of your high-risk project items -->
-* We had added all our details in the trial sprint review so that we wont need to add much in the first one seperately. 
-* Much of the review will be a repitition of the trial sprint. All the new details will be **HIGHLIGHTED IN BOLD**
-
-### Current state of project
-
-* Finalized the design of the project.
-* Working on CAD design for placement of each component and sensor on the hardware model.
-* Finalized the required parts and planning to design the external enclosing based on the dimensions of parts ordered. (Planning to use Birchwood from Tagen hall for making the final enclosing).
-* Block Diagram of the Project has been made (and is attached).
-* Reviewed the sequential logic of code required for the project.
-* Currently Working on a final circuit diagram so that we can test the ordered components. 
-* Ordered all the parts of our project. Haven't ordered backups as at this point we did not need any. 
-* Each Meet's progress was noted down thoughout the week. (will be shared below)
-* **Psudo codes have been written**
-* **Box design has been finalized**
-* **Box has been made (We are almost done at the moment of this documentation, will be finished by the end of the day)**
-
-
-### Last week's progress 
-
-
-##### Week 1 Meeting Reviews
-![meet 1](<WhatsApp Image 2024-11-04 at 12.21.29_28796dea.jpg>)
-![meet 2](<WhatsApp Image 2024-11-04 at 19.56.08_12cfe9d0.jpg>)
-![meet 3](<WhatsApp Image 2024-11-05 at 17.21.33_b0b557d4.jpg>)
-
-* Design of the project is finalized
-* Cirucit Diagram
-* BOM and materials have been ordered
-* block diagram design started
-* Code execution review started
-
-##### Week 2 Meeting Review
-
-![Image 1](image-2.png)
-![Image 2](file_2024-11-15_21.18.41[1].png)
-![Image 3](file_2024-11-15_21.19.49[1].png)
-[Components](components.pdf)
-![Image 4](<Wood work -1.jpg>)
-![Image 5](<image/Wood work -2.jpg>)
-
-
-
-* **Box has been built from scratch @RPL**
-* **Components Have been recieved (Only the AC- DC relay hasn't yet arrived)**
-* **CAD design has been Finalized for the BOX**
-  
-
-
-
-### Next week's plan
-
-* Testing of the components that have been ordered. 
-* Working Block Diagram to be ready by next monday. 
-* Working blocks for the code to be started. 
-* Plan to commit 10- 12 hrs for the coding formats. since coding will take up maximum time. 
-* Hardware design to be made ready in woodwork from tangen hall.
-* Components to be assembled in the hardware. 
-  
-* The biggest risk for us is the sequencing of different components using baremetal C and to implement the weight measurement mechanism. 
-* checking O/Ps for each components and getting the outputs correctly. 
-* 
-
-###### Estimated time
-
-| Name      | Planned Tasks                                   | Allotted time (Hrs) |
-|-----------|-------------------------------------------------|---------------------|
-| Komalika  | datasheet reading, Coding logic and pseudocode  | 6                   |
-| Venkatesh | datasheet reading, Coding logic and pseudocode  | 6                   |
-| Aditya    | datasheet reading, CAD design                   | 6                   |
-
-## Sprint review trial
-
-  <!-- Finalize your project idea
-  Purchase components
-  Define interfaces -->
-
-
-### Current state of project
-
-<!-- What state is the project in right now?
-How the tasks fit in to your end goal
-Hardware status - have you purchased everything you need (plus backups)? Is everything working right? -->
-
-
-* Finalized the design of the project.
-* Working on CAD design for placement of each component and sensor on the hardware model.
-* Finalized the required parts and planning to design the external enclosing based on the dimensions of parts ordered. (Planning to use Birchwood from Tagen hall for making the final enclosing).
-* Block Diagram of the Project has been made (and is attached).
-* Reviewed the sequential logic of code required for the project.
-* Currently Working on a final circuit diagram so that we can test the ordered components. 
-* Ordered all the parts of our project. Haven't ordered backups as at this point we did not need any. 
-* Each Meet's progress was noted down thoughout the week. (will be shared below)
-
-
-##### Flow Chart 
-![Flow chart](<WhatsApp Image 2024-11-08 at 15.40.28_bc02f7d0.jpg>)
-
-##### BOM and materials have been ordered 
-##### Updated design 
-![Updated Design](<WhatsApp Image 2024-11-08 at 15.25.38_9bc420a6.jpg>)
-
-##### Code execution Flowchart
-![Code format1](<WhatsApp Image 2024-11-08 at 14.01.14_61b2d47e.jpg>)
-![Code format2](<WhatsApp Image 2024-11-08 at 14.01.33_d6694719.jpg>)
-
-### Last week's progress 
-
-<!-- Updates on each of the tasks
-Proof of work:
-Images, videos
-GitHub commits
-Mini-reports on debugging and development activities
-Anything you observed or discovered over the course of the work that is relevant to the project -->
-
-
-##### Week 1 Meeting Reviews
-![meet 1](<WhatsApp Image 2024-11-04 at 12.21.29_28796dea.jpg>)
-![meet 2](<WhatsApp Image 2024-11-04 at 19.56.08_12cfe9d0.jpg>)
-![meet 3](<WhatsApp Image 2024-11-05 at 17.21.33_b0b557d4.jpg>)
-
-* Design of the project is finalized
-* Cirucit Diagram
-* BOM and materials have been ordered
-* block diagram design started
-* Code execution review started
-
-### Next week's plan
-<!-- Hardware and software requirements
-System architecture block diagram
-Understanding of your high-risk project items -->
-
-<!-- Estimated time
-Assigned team member
-Definition of done
-Detailed description (optional) -->
-
-* Testing of the components that have been ordered. 
-* Working Block Diagram to be ready by next monday. 
-* Working blocks for the code to be started. 
-* Plan to commit 10- 12 hrs for the coding formats. since coding will take up maximum time. 
-* Hardware design to be made ready in woodwork from tangen hall.
-* Components to be assembled in the hardware. 
-
-* The biggest risk for us is the sequencing of different components using baremetal C and to implement the weight measurement mechanism. 
-* checking O/Ps for each components and getting the outputs correctly. 
-
-###### Estimated time
-
-| Name      | Planned Tasks                                   | Allotted time (Hrs) |
-|-----------|-------------------------------------------------|---------------------|
-| Komalika  | datasheet reading, Coding logic and pseudocode  | 6                   |
-| Venkatesh | datasheet reading, Coding logic and pseudocode  | 6                   |
-| Aditya    | datasheet reading, CAD design                   | 6                   |
 
 ## Final Project Proposal
 
@@ -531,18 +210,122 @@ Add your slides to the Final Project Proposal slide deck in the Google Drive.
 https://docs.google.com/presentation/d/1UlWTaDfhGs1sIeoClrVQAtH8inhLJokr/edit?usp=sharing&ouid=103026498329444088626&rtpof=true&sd=true 
 
 
-## References
+# SOLEDRY
 
-Fill in your references here as you work on your proposal and final submission. Describe any libraries used here.
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/4PO5M1Wx)
+# final-project-skeleton
+    
+    * Team Name: ohm-sweet-ohm
+    * Team Members: Venkatesh Komalika & Jyotiraditya 
+    * Github Repository URL: https://github.com/upenn-embedded/final-project-ohm-sweet-ohm
+    * Github Pages Website URL: [for final submission]
+    * Description of hardware: (embedded hardware, laptop, etc)
 
-## Github Repo Submission Resources
+## Final Project Report
 
-You can remove this section if you don't need these references.
+Don't forget to make the GitHub pages public website!
+If you’ve never made a Github pages website before, you can follow this webpage (though, substitute your final project repository for the Github username one in the quickstart guide):  <https://docs.github.com/en/pages/quickstart>
 
-* [ESE5160 Example Repo Submission](https://github.com/ese5160/example-repository-submission)
-* [Markdown Guide: Basic Syntax](https://www.markdownguide.org/basic-syntax/)
-* [Adobe free video to gif converter](https://www.adobe.com/express/feature/video/convert/video-to-gif)
-* [Curated list of example READMEs](https://github.com/matiassingers/awesome-readme)
-* [VS Code](https://code.visualstudio.com/) is heavily recommended to develop code and handle Git commits
-  * Code formatting and extension recommendation files come with this repository.
-  * Ctrl+Shift+V will render the README.md (maybe not the images though)
+### 1. Video
+
+Link to the video - <https://drive.google.com/file/d/1IilFWwbBmbQqKNDm-Jm01vqyb_RhfAGt/view?usp=sharing>
+
+### 2. Images
+
+![Final image](image-5.png)
+
+### 3. Results
+
+#### 3.1 Software Requirements Specification (SRS) Results
+
+* SRS 01 – Humidity and temperature sensors will continuously monitor the environment, sending data to the ATmega328pb every second and sending heater temperature every second as well and it's getting compared every 30 seconds.
+* SRS 02 – The weight sensor will measure and update the shoe weight with a precision of 20 grams, and values will be logged every 30 seconds.
+* SRS 03 – Relay switches will control the heater and fans based on pre-set temperature thresholds at 30°C , observed every 30 seconds.
+* SRS 04 – The display will update every second to show the current temperature, humidity, and weight, as well as the percentage of drying progress.
+* SRS 05 – The user can adjust the mode (Automatic, Manual, and Profile mode) via the buttons, with input processing every 30 seconds. (However for the scope for the final demonstration we are focussing on the automatic mode only.)
+**Did you achieve your requirements?**
+Yes. The modes can be selected and the readings for both the sensors are accurate. 
+**How did you test? Show proof of work (videos, images, collected data, etc.)**
+
+(posted with the hardware)
+
+#### 3.2 Hardware Requirements Specification (HRS) Results
+* HRS 01 – The project shall be based on the ATmega328pb microcontroller to control relays, heating coil, fans, and process sensor data.
+* HRS 02 – A sensor shall be used to detect the weight of the wet shoe placed in the box. The sensor shall measure weight with an accuracy of 20 grams and send data to the microcontroller.
+* HRS 03 – A heater shall be used as the drying element. The coil’s temperature shall be continuously monitored by a temperature sensor to avoid overheating. The system shall shut down the coil if the temperature exceeds a preset limit that 30°C. 
+* HRS 04 – Two 5V fans shall be used to ensure the circulation of hot air inside the box. The fans shall operate in conjunction with the heating coil to provide an even airflow.
+* HRS 05 – An LCD display shall be used to show the real-time weight of the shoe and the estimated drying time. The drying time will be calculated based on the weight and environmental conditions (temperature and humidity).
+* HRS 06 – A temperature and humidity sensor shall be used to monitor the humidity and temperature inside the box, ensuring optimal drying conditions are maintained.
+* HRS 07 – Relays shall control the power supply to the heating coil and fans, turning them on or off based on the shoe weight, temperature, and humidity readings.
+* HRS 08 – A 5V power supply block shall power the microcontrollers and input devices, while a 12V power supply shall be used for the relays and output devices (fans), AC supply for the Heater. 
+**Did you achieve your requirements?**
+Yes. 
+How did you test? Show proof of work (videos, images, collected data, etc.)
+We directly started to work with the components. For the relay we tested with the LEDs to see if the switches would get turned on or not.
+
+We measure the readings every 30 secs but we compare them every 15 mins. After the two/ three consecutive readings are the same, the shoe gets dried and we turn off the heater and the fans. 
+
+**Proof**
+[To be noted that that the box wasnt covered so the readings for the temperature and humidity are not that different. Also to be noted that the upper limit for the temp sensor was set to be 40 degrees C]
+
+* Readings before the drying of the shoe:
+![wet shoe](image-3.png)
+
+
+* Readings after the drying process is complete :
+![dried shoe](image-4.png)
+
+  **Three topics**
+1. I2C with weight sensor 
+2. I2C with Humidity and temperature sensor
+3. Power management
+4. Interrupts
+5. Timers
+  
+  **Input devices**
+  1. humidity and temperature sebnsor
+  2. weight sensor
+  
+   
+   **Output devices**
+1. LCD
+2. Heated chamber
+3. fans
+4. mobaexterm
+  
+
+### 4. Conclusion
+
+Reflect on your project. Some questions to consider: What did you learn from it? What went well? What accomplishments are you proud of? What did you learn/gain from this experience? Did you have to change your approach? What could have been done differently? Did you encounter obstacles that you didn’t anticipate? What could be a next step for this project?
+
+* This project has been filled with it's ups and downs. All in all it was fun, we all learnt a lot of new things while applying the concepts that were taught in class. The teaching team has been a massive help, Not just 5190 TAs but even Miles who is a TA for 5180, has to be thanked for all the times he has helped us. 
+
+* Lesson learnt - 
+
+1. Before finalising the components, read the datasheet, maybe check if its actually clear and helpful.
+2. The Logic analyzer is your friend.
+3. How to reverse engineer the code based on the Logic analyzer readings if the datasheet is not helpful. 
+4. How to write I2C drivers, although it took a lot of time. 
+5. We learnt about Finite State Machines for assembling the code together. 
+6. Some new skills that were explored and learnt - Lazer cutting, 3-D printing. 
+7. We used two different sensors on the same atmega board.
+8. We learnt how to wrok as a team 
+9. How to divide tasks amongst the team 
+10. How to study concepts together. 
+11. How to remain calm and positive when everything else suggests that we shouldn't. 
+12. How to frame your code in a proper way.  
+
+* Approach change
+  - none
+* design change
+  - as suggested by the professor, the location of the fans has been changed to optimize the airflow within the box.
+
+* what could have been diffrently?
+  - We should have been more through while selecting the components and we should have checked the datasheets to see how detailed and easy to read they were. 
+  - We would have chosen a different thing for weight sensing, the load sensor, even though it has a 0.1 grams effor factor, we could have used something else as the datasheet for NAU7802 was not readable for us, and hence we used up a lot of our time to write code using the datasheet.
+*  Did you encounter obstacles that you didn’t anticipate?
+  - yes. some datasheets aren't helpful for begginers
+  - combining the codes together isn't as easy as it seems. 
+* What could be a next step for this project?
+  -  Building up the manual mode and the profile mode.
+
