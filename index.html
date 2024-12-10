@@ -215,6 +215,73 @@
             <li><a href="https://www.adafruit.com/product/5974" target="_blank">24-bit ADC for Load Cells</a></li>
             <li><a href="https://www.adafruit.com/product/5989" target="_blank">Temperature and Humidity Sensor</a></li>
         </ul>
+             <h2>9. Final Demo</h2>
+    <p>What do you expect to achieve by the final demonstration or after milestone 1?</p>
+
+    <h3>By Milestone 1, we expect to:</h3>
+    <ul>
+        <li>Have a finalized component list.</li>
+        <li>Place orders for all required parts (sensors, relays, microcontrollers, etc.).</li>
+        <li>Begin working on setting up basic components such as switches, clock settings, and initial coding for the microcontroller.</li>
+    </ul>
+
+    <h3>By the Final Demonstration Day, we expect to:</h3>
+    <ul>
+        <li>Have a fully functional prototype.</li>
+        <li>Complete several successful test runs to demonstrate the system’s ability to dry shoes efficiently using humidity, temperature, and weight control.</li>
+        <li>Showcase the system’s display, user interface, and Blynk IoT integration for remote monitoring and control.</li>
+    </ul>
+
+    <h2>10. Methodology</h2>
+    <p>What is your approach to the problem? Our approach to designing a smart shoe dryer tackles the problem of wet and odorous shoes by combining efficient drying with hygiene management and user-friendly controls. Here’s the breakdown:</p>
+
+    <h3>Core Functionality:</h3>
+    <ul>
+        <li>
+            <strong>Moisture & Odor Control:</strong> Incorporating a heating element with a fan to circulate warm air, promoting quick drying while minimizing condensation. An odor and germ filter is included to reduce bacteria and odors, addressing the hygiene aspect effectively.
+        </li>
+        <li>
+            <strong>Temperature and Humidity Monitoring:</strong> Sensors monitor real-time conditions inside the dryer to optimize heating intensity and ventilation based on moisture levels.
+        </li>
+    </ul>
+
+    <h3>Automation & Safety:</h3>
+    <ul>
+        <li>
+            <strong>Controlled by ATmega328PB:</strong> The ATmega328PB serves as the main controller, processing sensor inputs to dynamically adjust the heater and fan, maintaining safe and effective drying without overheating.
+        </li>
+        <li>
+            <strong>Relay and Safety Logic:</strong> The ATmega controls relays to manage high-power components, ensuring safe and responsive device operation.
+        </li>
+    </ul>
+
+    <h3>User Experience & Remote Control:</h3>
+    <ul>
+        <li>
+            <strong>Local Display for Status:</strong> A compact OLED or LCD display shows drying status, humidity, and temperature, giving users a clear, at-a-glance understanding of the device’s operation.
+        </li>
+        <li>
+            <strong>Wi-Fi & Blynk IoT Integration:</strong> The ESP32 module connects the device to Wi-Fi and integrates with the Blynk IoT platform, allowing remote monitoring and control. Users can start, stop, or adjust settings via their smartphone, enhancing convenience and accessibility.
+        </li>
+    </ul>
+
+    <h3>Design and Maintenance:</h3>
+    <ul>
+        <li>
+            <strong>Modular & Lightweight Design:</strong> The dryer will have a modular, lightweight enclosure that is easy to disassemble for cleaning, ensuring that maintenance is minimal and user-friendly.
+        </li>
+    </ul>
+
+    <h2>11. Evaluation</h2>
+    <ul>
+        <li>
+            <strong>Drying Time:</strong> One of the primary metrics is the time it takes to dry the shoes. The initial target is to dry the shoes within 6 hours. Future improvements will focus on reducing this drying time without increasing energy consumption or causing any damage to the shoes.
+        </li>
+        <li>
+            <strong>Accuracy of Dryness Detection:</strong> The system will use both weight and humidity as measures to determine when the shoes are fully dry. The accuracy of these readings, such as the weight fluctuation within +/- 50 grams and relative humidity levels, will be key in ensuring the shoes are dried without being overexposed to heat, which can damage them.
+        </li>
+    </ul>
+            
     </section>
 </body>
 </html>
