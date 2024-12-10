@@ -131,6 +131,66 @@
         <img src="box_drawing.png" alt="Design Sketches">
     </section>
     <section class="section">
+
+        <h2>6. Software Requirements Specification (SRS)</h2>
+
+    <h3>6.1 Overview</h3>
+    <p>
+        SoleDry is a system designed to automate the process of drying wet shoes. The software controls various input devices such as humidity, temperature, and weight sensors, as well as output devices like relays, fans, and heaters. The system processes sensor data, makes decisions based on pre-set thresholds, and displays real-time data to the user on an integrated display and through IoT (Blynk) connectivity for remote monitoring and control.
+    </p>
+
+    <h3>6.2 Users</h3>
+    <ul>
+        <li><strong>Primary Users:</strong> Individuals looking to dry their shoes in a controlled environment, especially in regions with long rainy seasons or humid climates.</li>
+        <li><strong>System Administrators:</strong> Users responsible for setting up and maintaining the hardware and software, adjusting thresholds and monitoring performance.</li>
+        <li><strong>Remote Users:</strong> Individuals who want to monitor and control the drying process through the Blynk IoT platform via their mobile devices.</li>
+    </ul>
+
+    <h3>6.3 Definitions, Abbreviations</h3>
+    <ul>
+        <li><strong>ATmega328pb:</strong> The microcontroller used to control output devices and read sensor data.</li>
+        <li><strong>ESP32:</strong> A microcontroller with built-in Wi-Fi for IoT capabilities, used for remote monitoring and control.</li>
+        <li><strong>Blynk IoT:</strong> A platform for remote device monitoring and control through mobile applications.</li>
+        <li><strong>SRS:</strong> Software Requirements Specification.</li>
+        <li><strong>PWM:</strong> Pulse Width Modulation used to control fan speed.</li>
+    </ul>
+
+    <h3>6.4 Functionality</h3>
+    <ul>
+        <li>SRS 01 – Humidity and temperature sensors will continuously monitor the environment, sending data to the ATmega328pb every second and sending heater temperature every second as well, with comparisons made every 30 seconds.</li>
+        <li>SRS 02 – The weight sensor will measure and update the shoe weight with a precision of 20 grams, and values will be logged every 30 seconds.</li>
+        <li>SRS 03 – Relay switches will control the heater and fans based on pre-set temperature thresholds at 30°C, observed every 30 seconds.</li>
+        <li>SRS 04 – The display will update every second to show the current temperature, humidity, and weight, as well as the percentage of drying progress.</li>
+        <li>SRS 05 – The user can adjust the mode (Automatic, Manual, and Profile mode) via the buttons, with input processing every 30 seconds. (For the final demonstration, focus is on the automatic mode only.)</li>
+    </ul>
+
+    <h2>7. Hardware Requirements Specification (HRS)</h2>
+
+    <h3>7.1 Overview</h3>
+    <p>
+        The system detects the weight of wet shoes placed inside a box and turns on the heating mechanism based on the weight, temperature, and humidity inside the box. The system uses a heating coil for drying, with fans circulating hot, dry air. Sensors continuously monitor the coil’s temperature to prevent overheating. A display shows the weight of the wet shoes and calculates the estimated time to dry the shoes completely, providing real-time feedback.
+    </p>
+
+    <h3>7.2 Definitions, Abbreviations</h3>
+    <ul>
+        <li><strong>ATmega328pb:</strong> A low-power microcontroller used to control relays, heater, and fans based on sensor inputs.</li>
+        <li><strong>ESP32:</strong> A Wi-Fi-enabled microcontroller responsible for wireless communication and remote control via Blynk IoT.</li>
+        <li><strong>LCD:</strong> Liquid Crystal Display used to show real-time stats (humidity, temperature, weight) to the user.</li>
+        <li><strong>Relay:</strong> An electrical switch used to control high-power devices like the heater and fans.</li>
+    </ul>
+
+    <h3>7.3 Functionality</h3>
+    <ul>
+        <li>HRS 01 – The project shall be based on the ATmega328pb microcontroller to control relays, heating coil, fans, and process sensor data.</li>
+        <li>HRS 02 – A sensor shall be used to detect the weight of the wet shoe placed in the box. The sensor shall measure weight with an accuracy of 20 grams and send data to the microcontroller.</li>
+        <li>HRS 03 – A heater shall be used as the drying element. The coil’s temperature shall be continuously monitored by a temperature sensor to avoid overheating. The system shall shut down the coil if the temperature exceeds a preset limit of 30°C.</li>
+        <li>HRS 04 – Two 5V fans shall be used to ensure the circulation of hot air inside the box. The fans shall operate in conjunction with the heating coil to provide an even airflow.</li>
+        <li>HRS 05 – An LCD display shall be used to show the real-time weight of the shoe and the estimated drying time. The drying time will be calculated based on the weight and environmental conditions (temperature and humidity).</li>
+        <li>HRS 06 – A temperature and humidity sensor shall be used to monitor the humidity and temperature inside the box, ensuring optimal drying conditions are maintained.</li>
+        <li>HRS 07 – Relays shall control the power supply to the heating coil and fans, turning them on or off based on the shoe weight, temperature, and humidity readings.</li>
+        <li>HRS 08 – A 5V power supply block shall power the microcontrollers and input devices, while a 12V power supply shall be used for the relays and output devices (fans), and AC supply for the heater.</li>
+    </ul>
+        
         <h3>8. Components</h3>
         <ul>
             <li><a href="https://www.digikey.com/en/products/detail/microchip-technology/ATMEGA328PB-XMINI/5338500" target="_blank">ATmega328pb</a></li>
