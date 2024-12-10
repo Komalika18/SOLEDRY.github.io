@@ -1,4 +1,13 @@
+# SOLEDRY
 
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/4PO5M1Wx)
+# final-project-skeleton
+    
+    * Team Name: ohm-sweet-ohm
+    * Team Members: Venkatesh Komalika & Jyotiraditya 
+    * Github Repository URL: https://github.com/upenn-embedded/final-project-ohm-sweet-ohm
+    * Github Pages Website URL: [for final submission]
+    * Description of hardware: (embedded hardware, laptop, etc)
 
 ## Final Project Proposal
 
@@ -210,16 +219,7 @@ Add your slides to the Final Project Proposal slide deck in the Google Drive.
 https://docs.google.com/presentation/d/1UlWTaDfhGs1sIeoClrVQAtH8inhLJokr/edit?usp=sharing&ouid=103026498329444088626&rtpof=true&sd=true 
 
 
-# SOLEDRY
 
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/4PO5M1Wx)
-# final-project-skeleton
-    
-    * Team Name: ohm-sweet-ohm
-    * Team Members: Venkatesh Komalika & Jyotiraditya 
-    * Github Repository URL: https://github.com/upenn-embedded/final-project-ohm-sweet-ohm
-    * Github Pages Website URL: [for final submission]
-    * Description of hardware: (embedded hardware, laptop, etc)
 
 ## Final Project Report
 
