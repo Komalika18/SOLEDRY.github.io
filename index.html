@@ -71,6 +71,47 @@
     <header>
         <h1>SOLEDRY</h1>
                 </a>
+
+        <h1>🌟 Introducing SoleDry: A Smart Shoe Drying Box! 🌟</h1>
+    <p>
+        Thrilled to share my latest project at The University of Pennsylvania, where my team designed and implemented SoleDry for the final project for the course <strong>ESE 5190: Smart Devices</strong> taught by professor <strong>Nicholas McGill-Gardner</strong>, an automatic shoe-drying system powered by the <strong>ATmega328PB microcontroller</strong>. This project was part of my journey in embedded systems engineering from August to December 2024, and it was an incredible learning experience!
+    </p>
+
+    <h2>💡 What is SoleDry?</h2>
+    <p>
+        SoleDry is a smart shoe dryer system that ensures your footwear is dried efficiently without compromising quality. Specifically designed for people living in regions with heavy monsoons, for example: India, Bangladesh, Korea, China, Japan, etc., SoleDry offers a reliable and easy way to take care of your shoes in a way that has never been done before. From the working class to the school-going children, SoleDry is the solution for all the problems your shoe faces during monsoons, whether it’s the wetness that doesn’t dry in the humid atmosphere naturally, the smell that comes with wet shoes, or the reduction of the lifespan of the shoe. SoleDry is the <strong>SOLE</strong> solution to all your wet shoe problems.
+    </p>
+
+    <h3>Modes Offered by SoleDry:</h3>
+    <ul>
+        <li>
+            <strong>Automatic Mode:</strong> In this mode, the user just has to put the shoe inside the shoe drying compartment. The system is programmed to automatically measure the weight of the shoe when it's wet and it turns on the drying process while constantly measuring the weight of the shoe, comparing it with the previously registered value (the value gets registered every 30 minutes in the Atmega328PB). It turns off the drying mechanism when the shoe is completely dry, based on consistent weight readings.
+            <ul>
+                <li>The automatic mode also prevents overheating and preserves the shoe’s quality by turning off the drying system when the temperature inside the shoe compartment reaches close to 40°C.</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Manual Mode:</strong> The manual mode allows the user to set a custom temperature and time limit for drying shoes.
+        </li>
+        <li>
+            <strong>New Profile Mode:</strong> In the new profile mode, users can set their shoe’s dry weight and let the machine know when to stop the drying process. For example, users can register a new profile like “Gojo’s shoes” to store the dry weight. When the profile is selected, the system will automatically stop drying when the weight reaches the predefined dry weight or if the compartment overheats.
+        </li>
+    </ul>
+
+    <h3>🔧 Technical Highlights:</h3>
+    <ul>
+        <li><strong>Baremetal C Programming:</strong> Developed the firmware for the system on an ATmega328PB microcontroller.</li>
+        <li>
+            <strong>Sensor Integration:</strong>
+            <ul>
+                <li><strong>HDC3020 (Temperature & Humidity Sensor):</strong> Monitors and displays real-time conditions, halting the drying process when the temperature exceeds 40°C to protect shoe materials.</li>
+                <li><strong>NAU7802 (Load Sensor ADC):</strong> Tracks shoe weight every second and registers changes every 30 minutes to determine drying completion.</li>
+            </ul>
+        </li>
+        <li><strong>I2C Protocol Communication:</strong> Enabled seamless interaction between the microcontroller and sensors.</li>
+        <li><strong>Power Management:</strong> Successfully integrated a 120V AC heater, two 12V fans, sensors, and AC-DC relays into a single efficient circuit.</li>
+        <li><strong>Automated Shutoff:</strong> The system intelligently halts operation when it detects consistent weight measurements, signaling that the shoes are dry.</li>
+    </ul>
     </header>
     <section class="section">
         <h2>Final Project Skeleton</h2>
