@@ -89,9 +89,51 @@
 
       <h3>1. Demo Video </h3>
 <a href="https://drive.google.com/file/d/1IilFWwbBmbQqKNDm-Jm01vqyb_RhfAGt/view?usp=sharing">Video </a>
+      <h3>2. Images </h3>
+    <h4>Final Product </h4>
+    <div class="image-container">
+        <img src="IMAGES/Soledry.png" alt="SoleDry">
+    </div>
+</section>
+
+<style>
+    .image-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .image-container img {
+        max-width: 50%; /* Adjust the percentage to control size */
+        height: auto; /* Maintains aspect ratio */
+    }
+</style>
+        <section class="section">
     
+    <h4> Enclosure </h4>
+<div class="image-container">
+        <img src="IMAGES/BOX1.jpg" alt="Enclosure">
+    </div>
+</section>
+
+<style>
+    .image-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .image-container img {
+        max-width: 50%; /* Adjust the percentage to control size */
+        height: auto; /* Maintains aspect ratio */
+    }
+</style>
+        <section class="section">
+
+
+            
     <section class="section">
-    <h3>4. System Block Diagram</h3>
+    <h3>3. System Block Diagram</h3>
     <div class="image-container">
         <img src="IMAGES/Flowchart.png" alt="Flowchart diagram for SOLEDRY">
     </div>
@@ -110,7 +152,7 @@
     }
 </style>
         <section class="section">
-<h3>5. Design Sketches</h3>
+<h3>4. Design Sketches</h3>
 <div class="image-container">
     <img src="IMAGES/box_drawing.png" alt="Design Sketches">
 </div>
@@ -130,8 +172,8 @@
 
         
 
-        <h2>6. Software Requirements Specification (SRS)</h2>
-    <h3>6.3 Definitions, Abbreviations</h3>
+        <h2>5. Software Requirements Specification (SRS)</h2>
+    <h3>5.1 Definitions, Abbreviations</h3>
     <ul>
         <li><strong>ATmega328pb:</strong> The microcontroller used to control output devices and read sensor data.</li>
         <li><strong>ESP32:</strong> A microcontroller with built-in Wi-Fi for IoT capabilities, used for remote monitoring and control.</li>
@@ -140,7 +182,7 @@
         <li><strong>PWM:</strong> Pulse Width Modulation used to control fan speed.</li>
     </ul>
 
-    <h3>6.4 Functionality</h3>
+    <h3>5.2 Functionality</h3>
     <ul>
         <li>SRS 01 – Humidity and temperature sensors will continuously monitor the environment, sending data to the ATmega328pb every second and sending heater temperature every second as well, with comparisons made every 30 seconds.</li>
         <li>SRS 02 – The weight sensor will measure and update the shoe weight with a precision of 20 grams, and values will be logged every 30 seconds.</li>
@@ -149,7 +191,7 @@
         <li>SRS 05 – The user can adjust the mode (Automatic, Manual, and Profile mode) via the buttons, with input processing every 30 seconds. (For the final demonstration, focus is on the automatic mode only.)</li>
     </ul>
 
-    <h2>7. Hardware Requirements Specification (HRS)</h2>
+    <h2>6. Hardware Requirements Specification (HRS)</h2>
       <ul>
         <li>HRS 01 – The project shall be based on the ATmega328pb microcontroller to control relays, heating coil, fans, and process sensor data.</li>
         <li>HRS 02 – A sensor shall be used to detect the weight of the wet shoe placed in the box. The sensor shall measure weight with an accuracy of 20 grams and send data to the microcontroller.</li>
@@ -161,7 +203,7 @@
         <li>HRS 08 – A 5V power supply block shall power the microcontrollers and input devices, while a 12V power supply shall be used for the relays and output devices (fans), and AC supply for the heater.</li>
     </ul>
         
-        <h3>8. Components</h3>
+        <h3>6.1. Components</h3>
         <ul>
             <li><a href="https://www.digikey.com/en/products/detail/microchip-technology/ATMEGA328PB-XMINI/5338500" target="_blank">ATmega328pb</a></li>
             <li><a href="https://www.adafruit.com/product/5000" target="_blank">ESP32</a></li>
@@ -174,7 +216,7 @@
         </ul>
 
 
-    <h2>11. Evaluation</h2>
+    <h2>7. Evaluation</h2>
     <ul>
         <li>
             <strong>Drying Time:</strong> Drying the shoes takes 6 hours. Future improvements will focus on reducing this drying time without increasing energy consumption or causing any damage to the shoes.
