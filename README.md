@@ -1,4 +1,4 @@
-# SOLEDRY
+# SOLEDRYhaha
 
 ##### 🌟 Introducing SoleDry: A Smart Shoe Drying Box! 🌟
 Thrilled to share my latest project at The University of Pennsylvania, where my team designed and implemented SoleDry for the final project for the course ESE 5190: Smart Devices taught by professor Nicholas McGill-Gardner, an automatic shoe-drying system powered by the ATmega328PB microcontroller. This project was part of my journey in embedded systems engineering from August to December 2024, and it was an incredible learning experience!
