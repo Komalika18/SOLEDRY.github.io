@@ -213,6 +213,7 @@
             <li><a href="https://www.adafruit.com/product/4541" target="_blank">Load Sensor</a></li>
             <li><a href="https://www.adafruit.com/product/5974" target="_blank">24-bit ADC for Load Cells</a></li>
             <li><a href="https://www.adafruit.com/product/5989" target="_blank">Temperature and Humidity Sensor</a></li>
+            <li>Total Cost of the system = $111.59 </li>
         </ul>
 
 
@@ -225,7 +226,18 @@
             <strong>Accuracy of Dryness Detection:</strong> The system will use both weight and humidity as measures to determine when the shoes are fully dry. The accuracy of these readings, such as the weight fluctuation within +/- 50 grams and relative humidity levels, are the key in ensuring the shoes are dried without being overexposed to heat, which can damage them.
         </li>
     </ul>
-            
+            <h3>7.1 Parts of the project that were a success </h3>
+            <ul>
+                <li>1. We were able to sucessfully set up two I2C busses to work simultaniously</li>
+                <li>2. The LCD display was able to dispay the real time Weight, temperature and humidity.</li>
+                <li>3. All the hardware and software requirements were met. </li>
+                <li>4. Three modes were set up for the user sucessfully </li>
+            </ul>
+
+            <h3>7.2 Things we would do differently </h3>
+            <li>1. Choose a different way to measure the weight or use a load sensor with a detailed datasheet. The strainguage load cell was very difficult to set up on the I2C, as the datasheet was inadequate and we had to <strong>Reverse Engineer the I2C code line by line. </strong> </li>
+            <li>2. Make the settup neater by designing a PCB instead of mounting the circuitry on a breadboard.</li>
+            <li>3. Setting up the manual mode and the Profile mode</li>
     </section>
 </body>
 </html>
