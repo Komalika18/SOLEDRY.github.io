@@ -1,13 +1,31 @@
 # SOLEDRY
 
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/4PO5M1Wx)
-# final-project-skeleton
+##### 🌟 Introducing SoleDry: A Smart Shoe Drying Box! 🌟
+Thrilled to share my latest project at The University of Pennsylvania, where my team designed and implemented SoleDry for the final project for the course ESE 5190: Smart Devices taught by professor Nicholas McGill-Gardner, an automatic shoe-drying system powered by the ATmega328PB microcontroller. This project was part of my journey in embedded systems engineering from August to December 2024, and it was an incredible learning experience!
+##### 💡 What is SoleDry?
+SoleDry is a smart shoe dryer system that ensures your footwear is dried efficiently without compromising quality. Specifically designed for people living in regions with heavy monsoons, for ex: India, Bangladesh, Korea, China, Japan, etc, SoleDry offers a reliable and easy way to take care of your shoes in a way that has never been done before. From the working class to the school-going children, SoleDry is the solution for all the problems your shoe faces during monsoons, be it the wetness that doesn’t dry in the humid atmosphere naturally, or be it the smell that comes with wet shoes, or be it the reduction of the lifespan of the shoe. Sole Dry is the SOLE solution to all your wet shoe problems. 
+* SoleDry offers the user to use 3 modes: 
+1. Automatic Mode- in this mode the user just has to put the shoe inside the shoe drying compartment. The system is programmed to automatically measure the weight of the shoe when it's wet and it turns on the drying process while constantly measuring the weight of the shoe, comparing it with the previously registered value( the value gets registered every 30 minutes in the Atmega328PB), It turns off the drying mechanism when the shoe is dry completely when the last two registered values are the same. 
+	In addition, the automatic mode also considers overheating of the shoe and preserves the quality of the shoe to its optimum, by turning off the drying system when the temperature inside the shoe compartment reaches close to 40°C. 
+2. Manual Mode- The manual mode allows the user to set a custom temperature and time limit for your shoe to dry. 
+3. New Profile mode- In the new profile mode you get to set your shoe’s dry weight, and let the machine know when to stop the drying process. For example, you can set your new shoe with your name like “Jack’s shoes”, this will register the dry weight of jack’s shoes. So the next time Jack’s shoes are placed in the drying compartment, and the profile “Jack’s shoes” is selected, the system will begin the drying process and will only get turned off when the weight of the shoes reaches the dry weight of his shoes, or when the shoe compartment gets overheated. 
+
+* 🔧 Technical Highlights:
+Baremetal C Programming: Developed the firmware for the system on an ATmega328PB microcontroller.
+Sensor Integration:
+HDC3020 (Temperature & Humidity Sensor): Monitors and displays real-time conditions, halting the drying process when the temperature exceeds 40°C to protect shoe materials.
+NAU7802 (Load Sensor ADC): Tracks shoe weight every second and registers changes every 30 minutes to determine drying completion.
+I2C Protocol Communication:  Enabled seamless interaction between the microcontroller and sensors.
+Power Management: Successfully integrated a 120V AC heater, two 12V fans, sensors, and AC-DC relays into a single efficient circuit.
+Automated Shutoff: The system intelligently halts operation when it detects consistent weight measurements, signaling that the shoes are dry.
+
+
+# Team Details
     
     * Team Name: ohm-sweet-ohm
-    * Team Members: Venkatesh Komalika & Jyotiraditya 
+    * Team Members: Venkatesh, Komalika & Jyotiraditya 
     * Github Repository URL: https://github.com/upenn-embedded/final-project-ohm-sweet-ohm
-    * Github Pages Website URL: [for final submission]
-    * Description of hardware: (embedded hardware, laptop, etc)
+    * Github Pages Website URL: https://komalika18.github.io/SOLEDRY.github.io/
 
 ## Final Project Proposal
 
